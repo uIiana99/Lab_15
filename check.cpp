@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <ctime>
+#include <ctime>
 
 template <typename T>
 class Stack {
@@ -35,7 +36,7 @@ class Stack {
         }
 
         T pop() {
-            if (count_ == 0) throw std::runtime_error("empty...");
+            if (count_ == 0) throw runtime_error("empty...");
             return array_[--count_];
         }
 
@@ -51,7 +52,7 @@ class Stack {
 
 
 int main() {
-    srand(time(NULL));
+    std::srand(time(NULL));
     try {
         Stack<char> StackChar(2);
         StackChar.push('W');
@@ -67,7 +68,7 @@ int main() {
         std::cout << std::endl << std::endl;
         Stack<int> StackInt;
         for (int i = 0; i < 6; i++) {
-            StackInt.push(1+rand_r()%999);
+            StackInt.push(1+rand()%999);
         }
         size_t _StackInt_count = StackInt.count();
         for (size_t i = 0; i < _StackInt_count; i++) {
