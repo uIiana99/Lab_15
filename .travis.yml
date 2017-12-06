@@ -1,0 +1,12 @@
+language: cpp
+
+notifications:
+  email: false
+
+before_install:
+  - sudo apt-get install -y valgrind
+  
+script:
+  - g++ -g check.cpp
+  - valgrind --leak-check=yes ./a.out
+  
