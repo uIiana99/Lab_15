@@ -1,8 +1,9 @@
 //  "Copyright (C) 2017, Koshkina Uliana"
 
 #include <iostream>
+#include <cstdlib>
 #include <ctime>
-#include <ctime>
+#include <stdexcept>
 
 template <typename T>
 class Stack {
@@ -36,7 +37,7 @@ class Stack {
         }
 
         T pop() {
-            if (count_ == 0) throw runtime_error("empty...");
+            if (count_ == 0) throw std::runtime_error("empty...");
             return array_[--count_];
         }
 
@@ -52,7 +53,7 @@ class Stack {
 
 
 int main() {
-    std::srand(time(NULL));
+    srand(time(NULL));
     try {
         Stack<char> StackChar(2);
         StackChar.push('W');
