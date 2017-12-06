@@ -8,5 +8,5 @@ before_install:
   
 script:
   - g++ -g check.cpp
-  - valgrind --leak-check=yes ./a.out
+  - valgrind --leak-check=yes -v ./a.out
   
